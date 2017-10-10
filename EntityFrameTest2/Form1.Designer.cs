@@ -30,6 +30,7 @@
         {
             this.cmdQuery1 = new System.Windows.Forms.Button();
             this.cmdQuantifiers = new System.Windows.Forms.Button();
+            this.cmdRelation = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdQuery1
@@ -52,11 +53,22 @@
             this.cmdQuantifiers.UseVisualStyleBackColor = true;
             this.cmdQuantifiers.Click += new System.EventHandler(this.cmdQuantifiers_Click);
             // 
+            // cmdRelation
+            // 
+            this.cmdRelation.Location = new System.Drawing.Point(252, 29);
+            this.cmdRelation.Name = "cmdRelation";
+            this.cmdRelation.Size = new System.Drawing.Size(85, 46);
+            this.cmdRelation.TabIndex = 2;
+            this.cmdRelation.Text = "relation";
+            this.cmdRelation.UseVisualStyleBackColor = true;
+            this.cmdRelation.Click += new System.EventHandler(this.cmdRelation_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 269);
+            this.Controls.Add(this.cmdRelation);
             this.Controls.Add(this.cmdQuantifiers);
             this.Controls.Add(this.cmdQuery1);
             this.Name = "Form1";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button cmdQuery1;
         private System.Windows.Forms.Button cmdQuantifiers;
+        private System.Windows.Forms.Button cmdRelation;
     }
 }
 

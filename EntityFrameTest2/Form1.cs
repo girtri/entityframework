@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
+using EntityFrameTest2.Models;
 
 namespace EntityFrameTest2
 {
@@ -46,5 +48,40 @@ namespace EntityFrameTest2
                 var allHaveJ = context.Utenti.All(p => p.FirstName.Contains("J"));
             }
         }
+
+        private void cmdRelation_Click(object sender, EventArgs e)
+        {
+            using (var context = new AdvContext()) {
+                //context.Configuration.LazyLoadingEnabled = true;
+                //var query = context.Utenti.Where(w => w.BusinessEntityID < 4).Include(p => p.PhoneNumbers).ToList();
+
+                /*
+                var query2 = (from utente in context.Utenti.Include(p => p.PersonPhone)
+                             where utente.BusinessEntityID < 4
+                             select utente).ToList();
+                */
+
+                var query = (from utente in context.Utenti
+                             where utente.BusinessEntityID < 4
+                             select utente).ToList();
+
+                foreach (Person p in query) {
+                    Console.WriteLine(p.PersonPhone.FirstOrDefault()?.Number);
+                }
+                
+                /*
+                var query2 = from utente in context.Utenti.Include(p => p.PersonPhone)
+                    where utente.PersonPhone.Any(ph => ph.Number.StartsWith("6"))
+                    select utente;
+
+                foreach (Person p in query2) {
+                    Console.WriteLine(p.PersonPhone.FirstOrDefault()?.Number);
+                }
+                */
+                
+                Console.WriteLine("fine");
+            }
+        }
+
     }
 }
