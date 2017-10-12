@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using EntityFrameTest2.Models;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -13,8 +8,9 @@ namespace EntityFrameTest2
     {
         public AdvContext(): base("AdventureWorks2012"){}
 
-        public virtual DbSet<Person> Utenti {get; set; }
+        public virtual DbSet<Person> People {get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumber {get; set; }
+        public virtual DbSet<PhoneNumberType> PhoneNumberType {get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
