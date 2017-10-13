@@ -35,6 +35,8 @@
             this.cmdQuery2 = new System.Windows.Forms.Button();
             this.cmdPaging = new System.Windows.Forms.Button();
             this.cmdJoin = new System.Windows.Forms.Button();
+            this.cmdGroupby = new System.Windows.Forms.Button();
+            this.cmdSelectmany = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdQuery1
@@ -107,11 +109,33 @@
             this.cmdJoin.UseVisualStyleBackColor = true;
             this.cmdJoin.Click += new System.EventHandler(this.cmdJoin_Click);
             // 
+            // cmdGroupby
+            // 
+            this.cmdGroupby.Location = new System.Drawing.Point(366, 91);
+            this.cmdGroupby.Name = "cmdGroupby";
+            this.cmdGroupby.Size = new System.Drawing.Size(85, 48);
+            this.cmdGroupby.TabIndex = 7;
+            this.cmdGroupby.Text = "group by";
+            this.cmdGroupby.UseVisualStyleBackColor = true;
+            this.cmdGroupby.Click += new System.EventHandler(this.cmdGroupby_Click);
+            // 
+            // cmdSelectmany
+            // 
+            this.cmdSelectmany.Location = new System.Drawing.Point(26, 155);
+            this.cmdSelectmany.Name = "cmdSelectmany";
+            this.cmdSelectmany.Size = new System.Drawing.Size(85, 48);
+            this.cmdSelectmany.TabIndex = 8;
+            this.cmdSelectmany.Text = "select many";
+            this.cmdSelectmany.UseVisualStyleBackColor = true;
+            this.cmdSelectmany.Click += new System.EventHandler(this.cmdSelectmany_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 269);
+            this.Controls.Add(this.cmdSelectmany);
+            this.Controls.Add(this.cmdGroupby);
             this.Controls.Add(this.cmdJoin);
             this.Controls.Add(this.cmdPaging);
             this.Controls.Add(this.cmdQuery2);
@@ -134,6 +158,8 @@
         private System.Windows.Forms.Button cmdQuery2;
         private System.Windows.Forms.Button cmdPaging;
         private System.Windows.Forms.Button cmdJoin;
+        private System.Windows.Forms.Button cmdGroupby;
+        private System.Windows.Forms.Button cmdSelectmany;
     }
 }
 
