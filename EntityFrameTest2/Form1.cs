@@ -239,5 +239,41 @@ namespace EntityFrameTest2
                 }
             }
         }
+
+        private void cmdUnion_Click(object sender, EventArgs e)
+        {
+            using(var context = new AdvContext()) {
+                // demo DISTINCT
+                var query = context.People
+                    .Select(p => p.EmailPromotion)
+                    .Distinct();
+
+                foreach (var p in query) {
+                    Console.WriteLine("email promotion: {0} ", p);
+                }
+
+                // demo UNION
+                var unionQuery = (from onePerson in context.People where onePerson.BusinessEntityID <= 5
+                    select new
+                    {
+                        Name = onePerson.LastName + " " + onePerson.FirstName,
+                        RowType = "Person"
+                    })
+                    .Union(from oneEmployee in context.Employees where oneEmployee.BusinessEntityID <= 5
+                    select new
+                    {
+                        Name = oneEmployee.JobTitle,
+                        RowType = "Employee"
+                    })
+                    .OrderBy(result => result.RowType)
+                    .ThenBy(result => result.Name);
+
+                foreach (var res in unionQuery) {
+                    Console.WriteLine("Rowtype {0}, Name: {1}, ", res.RowType, res.Name);
+                }
+
+                // NB: altri operatori utilizzabili  -> Intersect, Except
+            }
+        }
     }
 }

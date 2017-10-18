@@ -11,6 +11,7 @@ namespace EntityFrameTest2
         public virtual DbSet<Person> People {get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumber {get; set; }
         public virtual DbSet<PhoneNumberType> PhoneNumberType {get; set; }
+        public virtual DbSet<Employee> Employees {get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -37,6 +37,7 @@
             this.cmdJoin = new System.Windows.Forms.Button();
             this.cmdGroupby = new System.Windows.Forms.Button();
             this.cmdSelectmany = new System.Windows.Forms.Button();
+            this.cmdUnion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdQuery1
@@ -129,11 +130,22 @@
             this.cmdSelectmany.UseVisualStyleBackColor = true;
             this.cmdSelectmany.Click += new System.EventHandler(this.cmdSelectmany_Click);
             // 
+            // cmdUnion
+            // 
+            this.cmdUnion.Location = new System.Drawing.Point(140, 155);
+            this.cmdUnion.Name = "cmdUnion";
+            this.cmdUnion.Size = new System.Drawing.Size(85, 48);
+            this.cmdUnion.TabIndex = 9;
+            this.cmdUnion.Text = "Distinct + Union";
+            this.cmdUnion.UseVisualStyleBackColor = true;
+            this.cmdUnion.Click += new System.EventHandler(this.cmdUnion_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 269);
+            this.Controls.Add(this.cmdUnion);
             this.Controls.Add(this.cmdSelectmany);
             this.Controls.Add(this.cmdGroupby);
             this.Controls.Add(this.cmdJoin);
@@ -160,6 +172,7 @@
         private System.Windows.Forms.Button cmdJoin;
         private System.Windows.Forms.Button cmdGroupby;
         private System.Windows.Forms.Button cmdSelectmany;
+        private System.Windows.Forms.Button cmdUnion;
     }
 }
 
