@@ -38,11 +38,14 @@
             this.cmdGroupby = new System.Windows.Forms.Button();
             this.cmdSelectmany = new System.Windows.Forms.Button();
             this.cmdUnion = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmdStoreproc = new System.Windows.Forms.Button();
+            this.cmdAsync = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdQuery1
             // 
-            this.cmdQuery1.Location = new System.Drawing.Point(26, 31);
+            this.cmdQuery1.Location = new System.Drawing.Point(33, 14);
             this.cmdQuery1.Name = "cmdQuery1";
             this.cmdQuery1.Size = new System.Drawing.Size(85, 43);
             this.cmdQuery1.TabIndex = 0;
@@ -52,7 +55,7 @@
             // 
             // cmdQuantifiers
             // 
-            this.cmdQuantifiers.Location = new System.Drawing.Point(140, 28);
+            this.cmdQuantifiers.Location = new System.Drawing.Point(147, 11);
             this.cmdQuantifiers.Name = "cmdQuantifiers";
             this.cmdQuantifiers.Size = new System.Drawing.Size(85, 46);
             this.cmdQuantifiers.TabIndex = 1;
@@ -62,7 +65,7 @@
             // 
             // cmdRelation
             // 
-            this.cmdRelation.Location = new System.Drawing.Point(252, 29);
+            this.cmdRelation.Location = new System.Drawing.Point(259, 12);
             this.cmdRelation.Name = "cmdRelation";
             this.cmdRelation.Size = new System.Drawing.Size(85, 46);
             this.cmdRelation.TabIndex = 2;
@@ -72,7 +75,7 @@
             // 
             // cmdProjections
             // 
-            this.cmdProjections.Location = new System.Drawing.Point(366, 29);
+            this.cmdProjections.Location = new System.Drawing.Point(373, 12);
             this.cmdProjections.Name = "cmdProjections";
             this.cmdProjections.Size = new System.Drawing.Size(85, 46);
             this.cmdProjections.TabIndex = 3;
@@ -82,7 +85,7 @@
             // 
             // cmdQuery2
             // 
-            this.cmdQuery2.Location = new System.Drawing.Point(26, 91);
+            this.cmdQuery2.Location = new System.Drawing.Point(33, 74);
             this.cmdQuery2.Name = "cmdQuery2";
             this.cmdQuery2.Size = new System.Drawing.Size(85, 48);
             this.cmdQuery2.TabIndex = 4;
@@ -92,7 +95,7 @@
             // 
             // cmdPaging
             // 
-            this.cmdPaging.Location = new System.Drawing.Point(140, 91);
+            this.cmdPaging.Location = new System.Drawing.Point(147, 74);
             this.cmdPaging.Name = "cmdPaging";
             this.cmdPaging.Size = new System.Drawing.Size(85, 48);
             this.cmdPaging.TabIndex = 5;
@@ -102,7 +105,7 @@
             // 
             // cmdJoin
             // 
-            this.cmdJoin.Location = new System.Drawing.Point(252, 91);
+            this.cmdJoin.Location = new System.Drawing.Point(259, 74);
             this.cmdJoin.Name = "cmdJoin";
             this.cmdJoin.Size = new System.Drawing.Size(85, 48);
             this.cmdJoin.TabIndex = 6;
@@ -112,7 +115,7 @@
             // 
             // cmdGroupby
             // 
-            this.cmdGroupby.Location = new System.Drawing.Point(366, 91);
+            this.cmdGroupby.Location = new System.Drawing.Point(373, 74);
             this.cmdGroupby.Name = "cmdGroupby";
             this.cmdGroupby.Size = new System.Drawing.Size(85, 48);
             this.cmdGroupby.TabIndex = 7;
@@ -122,7 +125,7 @@
             // 
             // cmdSelectmany
             // 
-            this.cmdSelectmany.Location = new System.Drawing.Point(26, 155);
+            this.cmdSelectmany.Location = new System.Drawing.Point(33, 138);
             this.cmdSelectmany.Name = "cmdSelectmany";
             this.cmdSelectmany.Size = new System.Drawing.Size(85, 48);
             this.cmdSelectmany.TabIndex = 8;
@@ -132,7 +135,7 @@
             // 
             // cmdUnion
             // 
-            this.cmdUnion.Location = new System.Drawing.Point(140, 155);
+            this.cmdUnion.Location = new System.Drawing.Point(147, 138);
             this.cmdUnion.Name = "cmdUnion";
             this.cmdUnion.Size = new System.Drawing.Size(85, 48);
             this.cmdUnion.TabIndex = 9;
@@ -140,11 +143,42 @@
             this.cmdUnion.UseVisualStyleBackColor = true;
             this.cmdUnion.Click += new System.EventHandler(this.cmdUnion_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(26, 192);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(432, 10);
+            this.panel1.TabIndex = 10;
+            // 
+            // cmdStoreproc
+            // 
+            this.cmdStoreproc.Location = new System.Drawing.Point(33, 208);
+            this.cmdStoreproc.Name = "cmdStoreproc";
+            this.cmdStoreproc.Size = new System.Drawing.Size(85, 48);
+            this.cmdStoreproc.TabIndex = 11;
+            this.cmdStoreproc.Text = "store procedure";
+            this.cmdStoreproc.UseVisualStyleBackColor = true;
+            this.cmdStoreproc.Click += new System.EventHandler(this.cmdStoreproc_Click);
+            // 
+            // cmdAsync
+            // 
+            this.cmdAsync.Location = new System.Drawing.Point(147, 208);
+            this.cmdAsync.Name = "cmdAsync";
+            this.cmdAsync.Size = new System.Drawing.Size(85, 48);
+            this.cmdAsync.TabIndex = 12;
+            this.cmdAsync.Text = "Async";
+            this.cmdAsync.UseVisualStyleBackColor = true;
+            this.cmdAsync.Click += new System.EventHandler(this.cmdAsync_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(488, 269);
+            this.ClientSize = new System.Drawing.Size(488, 334);
+            this.Controls.Add(this.cmdAsync);
+            this.Controls.Add(this.cmdStoreproc);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cmdUnion);
             this.Controls.Add(this.cmdSelectmany);
             this.Controls.Add(this.cmdGroupby);
@@ -173,6 +207,9 @@
         private System.Windows.Forms.Button cmdGroupby;
         private System.Windows.Forms.Button cmdSelectmany;
         private System.Windows.Forms.Button cmdUnion;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button cmdStoreproc;
+        private System.Windows.Forms.Button cmdAsync;
     }
 }
 

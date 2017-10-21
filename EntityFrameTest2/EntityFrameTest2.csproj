@@ -63,6 +63,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\ManagerInfo.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonInfo.cs" />
     <Compile Include="Models\PersonMap.cs" />

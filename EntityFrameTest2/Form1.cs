@@ -275,5 +275,39 @@ namespace EntityFrameTest2
                 // NB: altri operatori utilizzabili  -> Intersect, Except
             }
         }
+
+        private void cmdStoreproc_Click(object sender, EventArgs e)
+        {
+            using(var context = new AdvContext()) {
+                string sql = @"uspGetEmployeeManagers {0}";
+                var query = context.Database.SqlQuery<ManagerInfo>(sql, 5);
+                foreach (var res in query) {
+                    Console.WriteLine("Level {0}, Name: {1}, LastName: {2}, Path: {3} ", res.RecursionLevel, res.FirstName, res.LastName, res.OrganizationNode);
+                }
+
+                // esempio di esecuzione StoreProc di aggiornamento
+                /*
+                var sql2 = @"UpdateCompanies {0}, {1}";
+                var rowsAffected = context.Database.ExecuteSqlCommand(sql2, DateTime.Now, true);
+                */
+            }
+        }
+
+        private void cmdAsync_Click(object sender, EventArgs e)
+        {
+            var res = GetPeopleAsync();
+            
+            int a = 1 + 2;
+            Console.WriteLine(a);
+            Console.ReadLine();
+        }
+
+        private async Task<IEnumerable<Person>>GetPeopleAsync()
+        {
+            using (var context = new AdvContext()) {
+                return await context.People.Where(p => p.BusinessEntityID <= 100)
+                    .ToListAsync();
+            }
+        }
     }
 }
