@@ -41,6 +41,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmdStoreproc = new System.Windows.Forms.Button();
             this.cmdAsync = new System.Windows.Forms.Button();
+            this.cmdNewPerson = new System.Windows.Forms.Button();
+            this.cmdConcurrency = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdQuery1
@@ -171,11 +173,33 @@
             this.cmdAsync.UseVisualStyleBackColor = true;
             this.cmdAsync.Click += new System.EventHandler(this.cmdAsync_Click);
             // 
+            // cmdNewPerson
+            // 
+            this.cmdNewPerson.Location = new System.Drawing.Point(259, 138);
+            this.cmdNewPerson.Name = "cmdNewPerson";
+            this.cmdNewPerson.Size = new System.Drawing.Size(85, 48);
+            this.cmdNewPerson.TabIndex = 13;
+            this.cmdNewPerson.Text = "crea record";
+            this.cmdNewPerson.UseVisualStyleBackColor = true;
+            this.cmdNewPerson.Click += new System.EventHandler(this.cmdNewPerson_Click);
+            // 
+            // cmdConcurrency
+            // 
+            this.cmdConcurrency.Location = new System.Drawing.Point(259, 208);
+            this.cmdConcurrency.Name = "cmdConcurrency";
+            this.cmdConcurrency.Size = new System.Drawing.Size(85, 48);
+            this.cmdConcurrency.TabIndex = 14;
+            this.cmdConcurrency.Text = "Concurrency";
+            this.cmdConcurrency.UseVisualStyleBackColor = true;
+            this.cmdConcurrency.Click += new System.EventHandler(this.cmdConcurrency_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 334);
+            this.Controls.Add(this.cmdConcurrency);
+            this.Controls.Add(this.cmdNewPerson);
             this.Controls.Add(this.cmdAsync);
             this.Controls.Add(this.cmdStoreproc);
             this.Controls.Add(this.panel1);
@@ -210,6 +234,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button cmdStoreproc;
         private System.Windows.Forms.Button cmdAsync;
+        private System.Windows.Forms.Button cmdNewPerson;
+        private System.Windows.Forms.Button cmdConcurrency;
     }
 }
 

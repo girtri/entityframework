@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using EntityFrameTest2.Models;
+using System.Data.Entity.Infrastructure; // per gestione errore in "concorrenza"
 
 namespace EntityFrameTest2
 {
@@ -307,6 +308,67 @@ namespace EntityFrameTest2
                 return await context.People.Where(p => p.BusinessEntityID <= 100)
                     .ToListAsync();
             }
+        }
+
+        private void cmdNewPerson_Click(object sender, EventArgs e)
+        {
+            using (var context = new AdvContext()) {
+                var game1 = new Game {
+                    Id = 1, // NB: l'assegnazione diretta del codice chiave funziona grazie alla configurazione del campo su GameMap!!
+                    Title = "Boubble bobble",
+                    Type = "Platform"
+                };
+
+                var game2 = new Game {
+                    Id = 2,
+                    Title = "Tetris",
+                    Type = "Puzzle"
+                };
+
+                context.Games.Add(game1);
+                context.Games.Add(game2);
+                context.SaveChanges();
+                Console.WriteLine("generati nuovi records");
+                
+            }
+        }
+
+        private void cmdConcurrency_Click(object sender, EventArgs e)
+        {
+            var game = new Game {
+                Id = 3,
+                Title = "Shinobi",
+                Type = "Horiz"
+            };
+
+            int gameId;
+
+            using (var context = new AdvContext()) {
+                context.Games.Add(game);
+                context.SaveChanges();
+                gameId = game.Id;
+            }
+
+            //simulate second game
+            using (var context = new AdvContext()) {
+                context.Games.Find(gameId).Type = "Horizon";
+                context.SaveChanges();
+            }
+
+            //back to first user
+            try {
+                using (var context = new AdvContext()) {
+                    // la corrente istanza ha il valore originale del campo "RowVersion" e trovandolo modificato su db genera errore di concorrenza!
+                    context.Entry(game).State = EntityState.Unchanged;
+                    game.Title = "Shinobi2";
+                    context.SaveChanges();
+                }
+                Console.WriteLine("Concurrency error should occur!");
+
+            } catch (DbUpdateConcurrencyException) {
+                Console.WriteLine("Expected concurrency error");
+            }
+            
         }
     }
 }

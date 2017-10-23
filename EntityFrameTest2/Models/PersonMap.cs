@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.Entity.ModelConfiguration;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameTest2.Models
 {
@@ -27,6 +24,7 @@ namespace EntityFrameTest2.Models
                 .IsRequired()
                 .HasColumnName("AltroNome");
             */
+
         }
 
     }

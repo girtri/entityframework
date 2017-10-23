@@ -12,11 +12,13 @@ namespace EntityFrameTest2
         public virtual DbSet<PhoneNumber> PhoneNumber {get; set; }
         public virtual DbSet<PhoneNumberType> PhoneNumberType {get; set; }
         public virtual DbSet<Employee> Employees {get; set; }
+        public virtual DbSet<Game> Games {get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<Person>().HasMany(p =>p.PersonPhone).WithRequired(p => p.Person).HasForeignKey(ph => ph.BusinessEntityID);
             modelBuilder.Configurations.Add(new PersonMap());
+            modelBuilder.Configurations.Add(new GameMap());
 
             // ignora PluralizingTableName convention
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
