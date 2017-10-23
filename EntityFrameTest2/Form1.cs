@@ -296,9 +296,8 @@ namespace EntityFrameTest2
         private void cmdAsync_Click(object sender, EventArgs e)
         {
             var res = GetPeopleAsync();
-            
-            int a = 1 + 2;
-            Console.WriteLine(a);
+            res.ContinueWith(t => { Console.WriteLine("fine async"); });
+            Console.WriteLine("continua elab");
             Console.ReadLine();
         }
 
