@@ -43,6 +43,7 @@
             this.cmdAsync = new System.Windows.Forms.Button();
             this.cmdNewPerson = new System.Windows.Forms.Button();
             this.cmdConcurrency = new System.Windows.Forms.Button();
+            this.cmdRawQuery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdQuery1
@@ -193,11 +194,22 @@
             this.cmdConcurrency.UseVisualStyleBackColor = true;
             this.cmdConcurrency.Click += new System.EventHandler(this.cmdConcurrency_Click);
             // 
+            // cmdRawQuery
+            // 
+            this.cmdRawQuery.Location = new System.Drawing.Point(373, 208);
+            this.cmdRawQuery.Name = "cmdRawQuery";
+            this.cmdRawQuery.Size = new System.Drawing.Size(85, 48);
+            this.cmdRawQuery.TabIndex = 15;
+            this.cmdRawQuery.Text = "Raw query dynamic";
+            this.cmdRawQuery.UseVisualStyleBackColor = true;
+            this.cmdRawQuery.Click += new System.EventHandler(this.cmdRawQuery_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 334);
+            this.Controls.Add(this.cmdRawQuery);
             this.Controls.Add(this.cmdConcurrency);
             this.Controls.Add(this.cmdNewPerson);
             this.Controls.Add(this.cmdAsync);
@@ -236,6 +248,7 @@
         private System.Windows.Forms.Button cmdAsync;
         private System.Windows.Forms.Button cmdNewPerson;
         private System.Windows.Forms.Button cmdConcurrency;
+        private System.Windows.Forms.Button cmdRawQuery;
     }
 }
 

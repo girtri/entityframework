@@ -1,7 +1,7 @@
 ﻿
 namespace EntityFrameTest2.Models
 {
-    class Game
+    public class Game
     {
         public int Id { get; set; }
 

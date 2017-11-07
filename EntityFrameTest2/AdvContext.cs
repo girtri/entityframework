@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace EntityFrameTest2
 {
-    class AdvContext: DbContext
+    public class AdvContext: DbContext
     {
         public AdvContext(): base("AdventureWorks2012"){}
 

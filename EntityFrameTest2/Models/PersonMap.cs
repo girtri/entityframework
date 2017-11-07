@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.Entity.ModelConfiguration;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameTest2.Models
 {

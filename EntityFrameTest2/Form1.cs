@@ -370,5 +370,14 @@ namespace EntityFrameTest2
             }
             
         }
+
+        private void cmdRawQuery_Click(object sender, EventArgs e)
+        {
+            using (var context = new AdvContext()) {
+                List<dynamic> MyList = context.CollectionFromSql("SELECT TOP 10 * FROM Person.Person",
+                                new Dictionary<string, object> {}).ToList();
+                Console.WriteLine(MyList.Count());
+            }
+        }
     }
 }

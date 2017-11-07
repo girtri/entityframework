@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EntityFrameTest2.Models
 {
     [Table("Person.PhoneNumberType")]
-    class PhoneNumberType
+    public class PhoneNumberType
     {
         [Key]
         public int PhoneNumberTypeID {get; set; }
